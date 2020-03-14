@@ -1,8 +1,8 @@
 \ProvidesPackage{common}
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath,amssymb,braket,graphicx,enumitem}
+\usepackage{amsmath,amssymb,braket,graphicx,enumitem,booktabs,multirow,booktabs}
 \usepackage[hidelinks]{hyperref}
-\newcommand{\ham}{\mathcal{H}}
+\newcommand{\ham}{\ensuremath{\mathcal{H}}}
 \newcommand{\lx}{\LaTex{}}
 \newcommand{\ii}[1]{\ensuremath{\int_{-\infty}^{\infty}{#1}\:}}
 \newcommand{\uu}[1]{\textsuperscript{#1}}
@@ -29,5 +29,5 @@
 {\begin{equation} \begin{aligned}}
 {\end{aligned} \end{equation}}
 \DeclareMathOperator{\sech}{sech}
-\newcommand{\beq}{\begin{equation} \begin{aligned}}
-\newcommand{\eeq}{\end{equation} \end{aligned}}
+\newcommand{\beq}[1][]{\begin{equation}\label{#1}\begin{aligned}}
+\newcommand{\eeq}[0]{\end{aligned}\end{equation}}
