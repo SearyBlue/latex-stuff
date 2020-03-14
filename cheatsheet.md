@@ -8,14 +8,23 @@ geometry: margin=1cm
 ## Available Classes 
 
 - **article**: 	For articles in scientific journals, presentations, short reports, program documentation, invitations, ...
+
 - **IEEEtran**: 	For articles with the IEEE Transactions format.
+
 - **proc**: 	A class for proceedings based on the article class.
+
 - **report**: 	For longer reports containing several chapters, small books, thesis, ...
+
 - **book**: 	For real books.
+
 - **slides**: 	For slides. The class uses big sans serif letters.
+
 - **memoir**: 	For changing sensibly the output of the document. It is based on the book class, but you can create any kind of document with it [1]
+
 - **letter**: 	For writing letters.
+
 - **beamer**: 	For writing presentations (see LaTeX/Presentations). 
+
 <!-- 
 \subsection*{Options}
 \begin{itemize}
@@ -31,4 +40,4 @@ geometry: margin=1cm
 \item draft 	makes LaTeX indicate hyphenation and justification problems with a small square in the right-hand margin of the problem line so they can be located quickly by a human. It also suppresses the inclusion of images and shows only a frame where they would normally occur. 
 \end{itemize}
 
-\end{document} --> -->
+\end{document} -->
