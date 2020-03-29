@@ -1,0 +1,30 @@
+\documentclass[12pt]{article}
+\usepackage{scratch_common}
+\begin{document}
+
+In the simple example, you write down the expression for \(\eta^\dagger\) from the \it{first off-diagonal equation}, take its conjugate to find \(\eta\) and go on to find the correct eigenvalues (and eigenvectors). An issue apparently arises if I take, instead, the \it{second off-diagonal equation} to calculate \(\eta\), hence calculate \(\eta^\dagger\) and try to find the eigenstates and values.
+\subsection*{Eigenvalues}
+From second-off diagonal equation,
+\beq
+\eta_1 &= \fr{-t}{\omega+\mu\hat n_2(1-\hat n_1}c^\dagger_2c_1 \\
+       &\implies \eta^\dagger_1 = c^\dagger_1c_2\fr{-t}{\omega+\mu\hat n_2(1-\hat n_1)}\\
+\eta_1\eta^\dagger_1 = 1-\hat n_1 &\implies 1-\hat n_1 = \fr{1}{\omega+\mu\hat n_2(1-\hat n_1)}t^2\hat n_2(1-\hat n_1)\fr{1}{\omega+\mu\hat n_2(1-\hat n_1)} \\
+                                  &\implies \qq{\omega+\mu\hat n_2(1-\hat n_1)}^2(1-\hat n_1) = t^2\hat n_2 (1-\hat n_1) \\ \\
+                                  &\implies \overline{\underline{\omega(1-\hat n_1) = t\hat n_2(1-\hat n_1)-\mu\hat n_2(1-\hat n_1)}}
+\eeq
+From what I understand, \(\omega = \begin{pmatrix}\hat E_1 &\\ &\hat E_1\end{pmatrix}\), so \(\omega(1-\hat n_1)\) should just be the eigenblock \(\hat E_1 = (V-2\mu)\hat n_2+(t-\mu)(1-\hat n_2)\). In that case, their is a contradiction between the two methods.
+\subsection*{Eigenstates}
+The correct eigenstate corresponding to \(\ket{10}\) is \(U^\dagger\ket{10}=\ket{10}-\ket{01}\), where \(\ket{10}\) means \(\ket{\hat n_1=1,\hat n_2=0}\). If I now attempt to calculate the eigenstates using the alternative approach (just as I did for the eigenstates), the following happens:
+\beq
+& U^\dagger\ket{10} = (1-\eta+\eta^\dagger)\ket{10} = \ket{10}-\eta\ket{10} && \rr{\eta^\dagger\ket{10}=0} \\
+& \text{Now, }\eta\ket{10} = \fr{-t}{\omega+\mu\hat n_2(1-\hat n_1)}c^\dagger_2c_1\ket{10} = \fr{-t}{\omega+\mu\hat n_2(1-\hat n_1)}\ket{01}\\
+& \text{But, } (\omega+\mu\hat n_2(1-\hat n_1))\ket{01} = \qq{\begin{pmatrix}\hat E_1 & \\ & \hat E_1 \end{pmatrix} +\mu}\begin{pmatrix} 0 \\ \ket{\hat n_2=1}\end{pmatrix} = \begin{pmatrix} 0 \\ (\hat E_1+\mu)\ket{\hat n_2=1}\end{pmatrix}
+\eeq
+Using \(\hat E_1 \ket{\hat n_2=1} = \qq{(V-2\mu)\hat n_2+(t-\mu)(1-\hat n_2)}\ket{\hat n_2=1} = (V-2\mu)\ket{\hat n_2=1}\), the final expression for \((\omega+\mu\hat n_2(1-\hat n_1))\ket{10}\) becomes
+\beq
+(\omega+\mu\hat n_2(1-\hat n_1))\ket{10} &= \begin{pmatrix} 0 \\ (V-2\mu+\mu)\ket{\hat n_2=1}\end{pmatrix} = (V-\mu)\ket{01}\\
+\text{therefore, } \eta\ket{10} &= \fr{-t}{V-\mu}\ket{01} \\\\
+\text{which means, } &\overline{\underline{U^\dagger\ket{10} = \ket{10} + \fr{t}{V-\mu}\ket{01}}}
+\eeq
+This is in conflict with the actual eigenvalue \(\ket{10}-\ket{01}\).
+\end{document}
